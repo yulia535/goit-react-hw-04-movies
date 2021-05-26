@@ -8,13 +8,13 @@ import routes from '../routes';
 class MovieDetailsPage extends Component {
   state = {
     genres: [],
-    poster_path: null,
-    title: null,
-    vote_average: null,
-    overview: null,
-    id: null,
-    cast: null,
-    reviews: null,
+    poster_path: '',
+    title: '',
+    vote_average: '',
+    overview: '',
+    id: '',
+    cast: '',
+    reviews: '',
   };
 
   componentDidMount() {
@@ -46,11 +46,13 @@ class MovieDetailsPage extends Component {
           &#10229; Go back
         </button>
         <div className={styles.movieCard}>
-          <img
-            className={styles.poster}
-            src={`https://image.tmdb.org/t/p/original${poster_path}`}
-            alt={title}
-          />
+          {poster_path.length > 0 && (
+            <img
+              className={styles.poster}
+              src={`https://image.tmdb.org/t/p/original${poster_path}`}
+              alt={title}
+            />
+          )}
           <div>
             <h2>{title}</h2>
             <span>User Score: {vote_average * 10}%</span>

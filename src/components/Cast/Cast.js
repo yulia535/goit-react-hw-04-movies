@@ -23,11 +23,19 @@ class Cast extends Component {
           <ul>
             {this.state.casts.map((cast) => (
               <li className={style.castCard} key={cast.id}>
-                <img
-                  className={style.castPhoto}
-                  src={`https://image.tmdb.org/t/p/original${cast.profile_path}`}
-                  alt={cast.name}
-                ></img>
+                {cast.profile_path === null ? (
+                  <img
+                    className={style.castPhoto}
+                    src='http://placehold.it/100x150/'
+                    alt='no images'
+                  ></img>
+                ) : (
+                  <img
+                    className={style.castPhoto}
+                    src={`https://image.tmdb.org/t/p/original${cast.profile_path}`}
+                    alt={cast.name}
+                  ></img>
+                )}
                 <h3>{cast.name}</h3>
                 <span>{`Character:${cast.character}`}</span>
               </li>

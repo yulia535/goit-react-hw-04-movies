@@ -1,4 +1,4 @@
-import React, { lazy } from 'react';
+import React, { Suspense, lazy } from 'react';
 import { Route, NavLink, Switch } from 'react-router-dom';
 // import HomePage from './pages/HomePage';
 // import MoviesPage from './pages/MoviesPage';
@@ -39,12 +39,14 @@ const App = () => (
         </NavLink>
       </li>
     </ul>
-    <Switch>
-      <Route exact path={routes.home} component={HomePage} />
-      <Route path={routes.movieDetails} component={MovieDetailsPage} />
-      <Route path={routes.movies} component={MoviesPage} />
-      <Route component={HomePage}></Route>
-    </Switch>
+    <Suspense fallback={<h1>Loading...</h1>}>
+      <Switch>
+        <Route exact path={routes.home} component={HomePage} />
+        <Route path={routes.movieDetails} component={MovieDetailsPage} />
+        <Route path={routes.movies} component={MoviesPage} />
+        <Route component={HomePage}></Route>
+      </Switch>
+    </Suspense>
   </>
 );
 
