@@ -1,0 +1,18 @@
+.buttonGoBack {
+  background: #fff;
+  border: none;
+  margin-top: 10px;
+}
+.movieCard {
+  padding-bottom: 10px;
+  display: flex;
+  box-shadow: 0px 5px 5px -5px rgba(34, 60, 80, 0.6);
+}
+.poster {
+  width: 300px;
+  margin-right: 30px;
+}
+.movieAdditionalInformation {
+  padding-bottom: 10px;
+  box-shadow: 0px 5px 5px -5px rgba(34, 60, 80, 0.6);
+}

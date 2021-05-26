@@ -1,0 +1,17 @@
+.NavLink {
+  color: black;
+  text-decoration: none;
+  margin-right: 20px;
+}
+.NavLinkActiv {
+  color: red;
+}
+.NavList {
+  display: flex;
+  list-style: none;
+  text-decoration: none;
+  padding: 16px 10px 16px 40px;
+  margin: 0px;
+  /* border-bottom: 1px solid #000; */
+  box-shadow: 0px 5px 5px -5px rgba(34, 60, 80, 0.6);
+}
