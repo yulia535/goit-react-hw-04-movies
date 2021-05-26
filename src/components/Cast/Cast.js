@@ -24,10 +24,15 @@ class Cast extends Component {
           <ul>
             {casts.map(({ id, profile_path, name, character }) => (
               <li className={style.castCard} key={id}>
+                {/* <img
+                  className={style.castPhoto}
+                  src={`https://image.tmdb.org/t/p/original${profile_path}`}
+                  alt={name}
+                ></img> */}
                 {profile_path === null ? (
                   <img
                     className={style.castPhoto}
-                    src='http://placehold.it/100x150/'
+                    src='https://placehold.jp/100x150.png'
                     alt='no images'
                   ></img>
                 ) : (
