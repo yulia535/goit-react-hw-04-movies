@@ -17,13 +17,14 @@ class Cast extends Component {
   };
 
   render() {
+    const { casts } = this.state;
     return (
       <div>
-        {this.state.casts.length > 0 && (
+        {casts.length > 0 && (
           <ul>
-            {this.state.casts.map((cast) => (
-              <li className={style.castCard} key={cast.id}>
-                {cast.profile_path === null ? (
+            {casts.map(({ id, profile_path, name, character }) => (
+              <li className={style.castCard} key={id}>
+                {profile_path === null ? (
                   <img
                     className={style.castPhoto}
                     src='http://placehold.it/100x150/'
@@ -32,12 +33,12 @@ class Cast extends Component {
                 ) : (
                   <img
                     className={style.castPhoto}
-                    src={`https://image.tmdb.org/t/p/original${cast.profile_path}`}
-                    alt={cast.name}
+                    src={`https://image.tmdb.org/t/p/original${profile_path}`}
+                    alt={name}
                   ></img>
                 )}
-                <h3>{cast.name}</h3>
-                <span>{`Character:${cast.character}`}</span>
+                <h3>{name}</h3>
+                <span>{`Character:${character}`}</span>
               </li>
             ))}
           </ul>

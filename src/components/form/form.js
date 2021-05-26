@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-// import Axios from 'axios';
-// import { Link } from 'react-router-dom';
 
 class Form extends Component {
   state = {
@@ -21,6 +19,7 @@ class Form extends Component {
   };
 
   render() {
+    const { request } = this.state;
     return (
       <div>
         <form onSubmit={this.handleInputChange}>
@@ -28,7 +27,7 @@ class Form extends Component {
             type='text'
             autoComplete='off'
             autoFocus
-            value={this.state.request}
+            value={request}
             onChange={this.handleChenge}
           />
 

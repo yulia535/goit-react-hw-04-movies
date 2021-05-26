@@ -35,6 +35,7 @@ class MovieDetailsPage extends Component {
 
   render() {
     const { poster_path, title, vote_average, overview } = this.state;
+    const { url } = this.props.match;
 
     return (
       <div>
@@ -66,10 +67,10 @@ class MovieDetailsPage extends Component {
           <h3>Additional information</h3>
           <ul>
             <li>
-              <Link to={`${this.props.match.url}/Cast`}>Cast</Link>
+              <Link to={`${url}/Cast`}>Cast</Link>
             </li>
             <li>
-              <Link to={`${this.props.match.url}/Reviews`}>Reviews</Link>
+              <Link to={`${url}/Reviews`}>Reviews</Link>
             </li>
           </ul>
         </div>

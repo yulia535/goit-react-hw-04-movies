@@ -15,7 +15,6 @@ class MoviesPage extends Component {
   };
   componentDidUpdate(prevProps, prevState) {
     if (this.state.request !== prevState.request) {
-      console.log(this.state.request);
       this.loadMovies();
     }
   }
