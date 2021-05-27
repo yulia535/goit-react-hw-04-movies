@@ -32,7 +32,6 @@ class MovieDetailsPage extends Component {
   goBack = () => {
     this.props.history.push(this.props.location?.state?.from || routes.movies);
   };
-
   render() {
     const { poster_path, title, vote_average, overview } = this.state;
     const { url } = this.props.match;
@@ -67,10 +66,28 @@ class MovieDetailsPage extends Component {
           <h3>Additional information</h3>
           <ul>
             <li>
-              <Link to={`${url}/Cast`}>Cast</Link>
+              <Link
+                to={{
+                  pathname: `${url}/Cast`,
+                  state: {
+                    from: this.props.location.state.from,
+                  },
+                }}
+              >
+                Cast
+              </Link>
             </li>
             <li>
-              <Link to={`${url}/Reviews`}>Reviews</Link>
+              <Link
+                to={{
+                  pathname: `${url}/Reviews`,
+                  state: {
+                    from: this.props.location.state.from,
+                  },
+                }}
+              >
+                Reviews
+              </Link>
             </li>
           </ul>
         </div>
